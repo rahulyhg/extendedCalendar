@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<!--<link rel = "stylesheet" type = "text/css" href = "style.css"> -->
+</head>
+
+<body>
+<style>
+table {
+}
+
+td.month {
+	text-align: center;
+	padding: 30px;
+	font-size: 40px;
+}
+
+div.week {
+	font-size: 30px;
+	text-align: center;
+	border-left-style: dotted;
+	padding: 5px;
+}
+
+div.day {
+	border-style: solid;
+	width: 220px;
+	height: 156px;
+	padding: 1px;
+}
+
+div.weekNumber {
+	border-top-style: dotted;
+	border-bottom-style: dotted;
+	height: 75px;
+	text-align: center;
+	padding-top: 50px;
+	font-size: 40px;
+}
+
+div.blank {
+	border-color: lightgray;
+	color: lightgray;
+}      
+
+div.cellDay {
+	width: 70px;
+	text-align: center;
+	font-size: 30px;
+}
+
+div.sunIcons {
+    width: 100%;
+    height: 70px;
+    float: left;
+	background-repeat: no-repeat;
+	background-position: center; 
+	background-size: 180px 60px; 
+}
+
+div.cellMoon {
+	background-image: url("moon.png");
+	background-repeat: no-repeat;
+	background-position: center; 
+	background-size: 42px 34px; 
+	text-align: center;                
+	color: white;
+	font-family: 'Trebuchet MS';
+	font-weight: bold;
+	text-shadow: 2px 2px 0px #FF0000;                
+	height: 36px;
+}
+	
+div.cellMoonB {
+	background-image: url("moon.png");
+	background-repeat: no-repeat;
+	background-position: center; 
+	background-size: 42px 34px; 
+	text-align: center;                
+	color: white;
+	font-family: 'Trebuchet MS';
+	font-weight: bold;
+	text-shadow: 2px 2px 0px black;                
+	height: 36px;
+}
+
+div.cellSun {
+    float: left;
+    width: 33.3%;
+    padding-top: 5px;
+    border-top-style: solid;
+    border-top-width: 0,1px;
+    text-align: center;
+}
+
+div.cellSunUp {
+
+}
+
+div.cellSunDown {
+
+}
+
+div.cellSunNoon {
+
+}
+
+div.cellNameDay {
+	height: 65px;
+	padding: 10px;
+	word-wrap: break-word;
+}
+
+div.cellData {
+
+}
+
+
+</style>
+	<!-- komenda wkhtmltopdf -s A4 -O landscape --dpi 300 kalendarz.html kan.pdf-->
+<table>
+	
+	<!--nazwa miesiąca -->
+	<tr>
+		<td class = "month" colspan = 4>
+		{{{MonthYear}}}
+		</td>
+                
+        <td colspan = 4>
+		<div>Lokalizacja- λ:  {{{Latitude}}} ,φ: {{{Longitude}}}</div>
+		<div>Strefa czasowa:  {{{TimeZone}}}</div>
+        <div style = 'text-align: center; margin-top: 10px;'>
+			<div>Uniwersalny kalendarz</div>             
+			<div>Copyright by Pan-Kawia 2017</div></div>
+		</td>
+
+	</tr>
+
+	<!--nazwy dni tygodnia -->
+	<tr>
+		<!-- Dzień Pn -->
+		<td>			<div class = "week">Poniedziałek</div>
+		</td>
+		<!-- Dzień Wt -->
+		<td>			<div class = "week">Wtorek</div>
+		</td>
+		<!-- Dzień Śr -->
+		<td>			<div class = "week">Środa</div>
+		</td>
+		<!-- Dzień Cz -->
+		<td>			<div class = "week">Czwartek</div>
+		</td>
+		<!-- Dzień Pt -->
+		<td>			<div class = "week">Piątek</div>
+		</td>
+		<!-- Dzień So -->
+		<td>			<div class = "week">Sobota</div>
+		</td>
+		<!-- Dzień Nd -->
+		<td>			<div class = "week" style = "color: red;">Niedziela</div>
+		</td>
+		
+		<!-- Numer dnia tygodnia -->
+		<td>			<div class = "week" style = "padding-left: 10px;">Tydz.</div>
+		</td>
+	
+	</tr>
